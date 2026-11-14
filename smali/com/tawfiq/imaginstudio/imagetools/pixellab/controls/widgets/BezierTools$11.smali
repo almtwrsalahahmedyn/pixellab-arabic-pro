@@ -1,0 +1,86 @@
+.class Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools$11;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/SeekBar/DiscreteSeekBar$OnProgressChangeListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools;->addStrokeOptions(Landroid/widget/LinearLayout;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools;
+
+.field final synthetic val$stroke_opacity_label:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;
+
+
+# direct methods
+.method public constructor <init>(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools;Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools$11;->this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools;
+
+    iput-object p2, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools$11;->val$stroke_opacity_label:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onProgressChanged(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/SeekBar/DiscreteSeekBar;IZ)V
+    .locals 0
+
+    iget-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools$11;->val$stroke_opacity_label:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;
+
+    invoke-virtual {p1, p2}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;->setValue(I)V
+
+    if-nez p3, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools$11;->this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools;
+
+    iget-object p1, p1, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools;->listener:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools$OnBezierToolsAction;
+
+    if-eqz p1, :cond_1
+
+    int-to-float p2, p2
+
+    const/high16 p3, 0x42c80000    # 100.0f
+
+    div-float/2addr p2, p3
+
+    const/high16 p3, 0x437f0000    # 255.0f
+
+    mul-float p2, p2, p3
+
+    float-to-int p2, p2
+
+    invoke-interface {p1, p2}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/BezierTools$OnBezierToolsAction;->setStrokeOpacity(I)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public onStartTrackingTouch(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/SeekBar/DiscreteSeekBar;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onStopTrackingTouch(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/SeekBar/DiscreteSeekBar;)V
+    .locals 0
+
+    return-void
+.end method

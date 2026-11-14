@@ -1,0 +1,61 @@
+.class public final Landroidx/appcompat/widget/AppCompatSpinner$2;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+
+
+# instance fields
+.field public final synthetic this$0:Landroidx/appcompat/widget/AppCompatSpinner;
+
+
+# direct methods
+.method public constructor <init>(Landroidx/appcompat/widget/AppCompatSpinner;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Landroidx/appcompat/widget/AppCompatSpinner$2;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onGlobalLayout()V
+    .locals 4
+
+    iget-object v0, p0, Landroidx/appcompat/widget/AppCompatSpinner$2;->this$0:Landroidx/appcompat/widget/AppCompatSpinner;
+
+    iget-object v1, v0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup:Landroidx/appcompat/widget/AppCompatSpinner$SpinnerPopup;
+
+    invoke-interface {v1}, Landroidx/appcompat/widget/AppCompatSpinner$SpinnerPopup;->isShowing()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v0}, Landroid/widget/Spinner;->getTextDirection()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/widget/Spinner;->getTextAlignment()I
+
+    move-result v2
+
+    iget-object v3, v0, Landroidx/appcompat/widget/AppCompatSpinner;->mPopup:Landroidx/appcompat/widget/AppCompatSpinner$SpinnerPopup;
+
+    invoke-interface {v3, v1, v2}, Landroidx/appcompat/widget/AppCompatSpinner$SpinnerPopup;->show(II)V
+
+    :cond_0
+    invoke-virtual {v0}, Landroid/widget/Spinner;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    :cond_1
+    return-void
+.end method

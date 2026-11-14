@@ -1,0 +1,120 @@
+.class Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/SeekArc$OnSeekArcChangeListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;->addControlsForMessage(I)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;
+
+.field final synthetic val$lightAngleLabel:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;
+
+
+# direct methods
+.method public constructor <init>(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;->this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;
+
+    iput-object p2, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;->val$lightAngleLabel:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onProgressChanged(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/SeekArc;IZ)V
+    .locals 7
+
+    iget-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;->this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;
+
+    invoke-static {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;->access$300(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;)Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;
+
+    move-result-object v0
+
+    iget-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;->this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;
+
+    invoke-static {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;->access$300(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;)Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;->isEmbossEnabled()Z
+
+    move-result v1
+
+    iget-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;->this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;
+
+    invoke-static {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;->access$300(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;)Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;->getEmbossIntensity()I
+
+    move-result v3
+
+    iget-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;->this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;
+
+    invoke-static {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;->access$300(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;)Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;->getEmbossAmbient()I
+
+    move-result v4
+
+    iget-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;->this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;
+
+    invoke-static {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;->access$300(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;)Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;->getEmbossHardness()I
+
+    move-result v5
+
+    iget-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;->this$0:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;
+
+    invoke-static {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;->access$300(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand;)Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;->getEmbossBevel()I
+
+    move-result v6
+
+    move v2, p2
+
+    invoke-virtual/range {v0 .. v6}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/TextComponent;->setEmboss(ZIIIII)V
+
+    iget-object p1, p0, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/optionExpand$257;->val$lightAngleLabel:Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;
+
+    invoke-virtual {p1, p2}, Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/option_label;->setValue(I)V
+
+    return-void
+.end method
+
+.method public onStartTrackingTouch(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/SeekArc;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onStopTrackingTouch(Lcom/tawfiq/imaginstudio/imagetools/pixellab/controls/widgets/SeekArc;)V
+    .locals 0
+
+    return-void
+.end method

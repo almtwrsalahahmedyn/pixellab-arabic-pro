@@ -1,0 +1,13 @@
+.class synthetic Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/CustomTextView$1;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/tawfiq/imaginstudio/imagetools/pixellab/TextObject/CustomTextView;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1009
+    name = null
+.end annotation

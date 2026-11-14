@@ -1,0 +1,18 @@
+.class public interface abstract Lcom/tawfiq/imaginstudio/imagetools/pixellab/GradientMaker$OnGradientSelectedListener;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/tawfiq/imaginstudio/imagetools/pixellab/GradientMaker;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "OnGradientSelectedListener"
+.end annotation
+
+
+# virtual methods
+.method public abstract onGradientSelected(Lcom/tawfiq/imaginstudio/imagetools/pixellab/GradientMaker$GradientFill;)V
+.end method

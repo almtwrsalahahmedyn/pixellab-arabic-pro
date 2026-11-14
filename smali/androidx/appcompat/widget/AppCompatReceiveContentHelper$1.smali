@@ -1,0 +1,134 @@
+.class public final Landroidx/appcompat/widget/AppCompatReceiveContentHelper$1;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroidx/core/view/inputmethod/InputConnectionCompat$OnCommitContentListener;
+
+
+# instance fields
+.field public final synthetic val$view:Landroid/view/View;
+
+
+# direct methods
+.method public constructor <init>(Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Landroidx/appcompat/widget/AppCompatReceiveContentHelper$1;->val$view:Landroid/view/View;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onCommitContent(Landroidx/core/view/inputmethod/InputContentInfoCompat;ILandroid/os/Bundle;)Z
+    .locals 5
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x19
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    if-lt v0, v1, :cond_1
+
+    and-int/2addr p2, v3
+
+    if-eqz p2, :cond_1
+
+    :try_start_0
+    iget-object p2, p1, Landroidx/core/view/inputmethod/InputContentInfoCompat;->mImpl:Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
+
+    invoke-interface {p2}, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->requestPermission()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    iget-object p2, p1, Landroidx/core/view/inputmethod/InputContentInfoCompat;->mImpl:Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
+
+    invoke-interface {p2}, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->getInputContentInfo()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/view/inputmethod/InputContentInfo;
+
+    if-nez p3, :cond_0
+
+    new-instance p3, Landroid/os/Bundle;
+
+    invoke-direct {p3}, Landroid/os/Bundle;-><init>()V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0, p3}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
+
+    move-object p3, v0
+
+    :goto_0
+    const-string v0, "androidx.core.view.extra.INPUT_CONTENT_INFO"
+
+    invoke-virtual {p3, v0, p2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    goto :goto_1
+
+    :catch_0
+    return v2
+
+    :cond_1
+    :goto_1
+    new-instance p2, Landroid/content/ClipData;
+
+    iget-object v0, p1, Landroidx/core/view/inputmethod/InputContentInfoCompat;->mImpl:Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
+
+    invoke-interface {v0}, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->getDescription()Landroid/content/ClipDescription;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/content/ClipData$Item;
+
+    iget-object p1, p1, Landroidx/core/view/inputmethod/InputContentInfoCompat;->mImpl:Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;
+
+    invoke-interface {p1}, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->getContentUri()Landroid/net/Uri;
+
+    move-result-object v4
+
+    invoke-direct {v1, v4}, Landroid/content/ClipData$Item;-><init>(Landroid/net/Uri;)V
+
+    invoke-direct {p2, v0, v1}, Landroid/content/ClipData;-><init>(Landroid/content/ClipDescription;Landroid/content/ClipData$Item;)V
+
+    new-instance v0, Landroidx/core/view/ContentInfoCompat$Builder;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, p2, v1}, Landroidx/core/view/ContentInfoCompat$Builder;-><init>(Landroid/content/ClipData;I)V
+
+    invoke-interface {p1}, Landroidx/core/view/inputmethod/InputContentInfoCompat$InputContentInfoCompatImpl;->getLinkUri()Landroid/net/Uri;
+
+    move-result-object p1
+
+    iput-object p1, v0, Landroidx/core/view/ContentInfoCompat$Builder;->mLinkUri:Landroid/net/Uri;
+
+    iput-object p3, v0, Landroidx/core/view/ContentInfoCompat$Builder;->mExtras:Landroid/os/Bundle;
+
+    new-instance p1, Landroidx/core/view/ContentInfoCompat;
+
+    invoke-direct {p1, v0}, Landroidx/core/view/ContentInfoCompat;-><init>(Landroidx/core/view/ContentInfoCompat$Builder;)V
+
+    iget-object p2, p0, Landroidx/appcompat/widget/AppCompatReceiveContentHelper$1;->val$view:Landroid/view/View;
+
+    invoke-static {p2, p1}, Landroidx/core/view/ViewCompat;->performReceiveContent(Landroid/view/View;Landroidx/core/view/ContentInfoCompat;)Landroidx/core/view/ContentInfoCompat;
+
+    move-result-object p1
+
+    if-nez p1, :cond_2
+
+    const/4 v2, 0x1
+
+    :cond_2
+    return v2
+.end method
