@@ -31,12 +31,14 @@
 ├── lib/                         # المكتبات الأصلية الثنائية (Native .so Libraries)
 ├── res/                         # موارد التطبيق (Drawables, Colors, Layouts, Values)
 ├── resources.arsc               # جدول الموارد الثنائية المترجمة
-├── smali/                       # كود البايت كود Smali الكامل لجميع كلاسات التطبيق
-├── custom_src/                  # الأكواد المصدرية النظيفة بلغة Java
+├── smali/                       # كود البايت كود Smali الكامل لجميع كلاسات التطبيق (المستخدم للبناء المباشر)
+├── java_src/                    # كود الجافا الأصلي المفكك بالكامل لكافة كلاسات التطبيق (للقراءة والتعديل)
 │   └── com/tawfiq/imaginstudio/imagetools/pixellab/
+│       ├── MainActivity.java          # النشاط الرئيسي للتطبيق
 │       ├── ArabicTextEnhancer.java    # كود تسوية الأسطر والمد
 │       ├── ProjectExportStudio.java   # كود استوديو تصدير PSD و SVG و XML
-│       └── PsdProjectImporter.java    # كود استيراد وقراءة PSD
+│       └── ... (300+ Java classes)
+├── custom_src/                  # الأكواد المصدرية النقية للميزات الجديدة بلغة Java
 ├── keystore/
 │   └── release.jks              # مفتاح التوقيع الرسمي للإصدار
 ├── build.sh                     # سكربت البناء والمحاذاة والتوقيع التلقائي

@@ -1,0 +1,85 @@
+package androidx.appcompat.widget;
+
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
+import android.widget.RadioButton;
+import androidx.appcompat.content.res.AppCompatResources;
+import com.tawfiq.imaginstudio.imagetools.pixellab.R;
+
+/* loaded from: classes.dex */
+public class AppCompatRadioButton extends RadioButton {
+    public final AppCompatBackgroundHelper mBackgroundTintHelper;
+    public final AppCompatCompoundButtonHelper mCompoundButtonHelper;
+    public final AppCompatTextHelper mTextHelper;
+
+    public AppCompatRadioButton(Context context, AttributeSet attributeSet) {
+        this(context, attributeSet, R.attr.radioButtonStyle);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public AppCompatRadioButton(Context context, AttributeSet attributeSet, int i) {
+        super(context, attributeSet, i);
+        TintContextWrapper.wrap(context);
+        ThemeUtils.checkAppCompatTheme(getContext(), this);
+        AppCompatCompoundButtonHelper appCompatCompoundButtonHelper = new AppCompatCompoundButtonHelper(this);
+        this.mCompoundButtonHelper = appCompatCompoundButtonHelper;
+        appCompatCompoundButtonHelper.loadFromAttributes(attributeSet, i);
+        AppCompatBackgroundHelper appCompatBackgroundHelper = new AppCompatBackgroundHelper(this);
+        this.mBackgroundTintHelper = appCompatBackgroundHelper;
+        appCompatBackgroundHelper.loadFromAttributes(attributeSet, i);
+        AppCompatTextHelper appCompatTextHelper = new AppCompatTextHelper(this);
+        this.mTextHelper = appCompatTextHelper;
+        appCompatTextHelper.loadFromAttributes(attributeSet, i);
+    }
+
+    @Override // android.widget.CompoundButton, android.widget.TextView, android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.applySupportBackgroundTint();
+        }
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.applyCompoundDrawablesTints();
+        }
+    }
+
+    @Override // android.widget.CompoundButton, android.widget.TextView
+    public final int getCompoundPaddingLeft() {
+        return super.getCompoundPaddingLeft();
+    }
+
+    @Override // android.view.View
+    public final void setBackgroundDrawable(Drawable drawable) {
+        super.setBackgroundDrawable(drawable);
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.onSetBackgroundDrawable();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setBackgroundResource(int i) {
+        super.setBackgroundResource(i);
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.onSetBackgroundResource(i);
+        }
+    }
+
+    @Override // android.widget.CompoundButton
+    public final void setButtonDrawable(int i) {
+        setButtonDrawable(AppCompatResources.getDrawable(getContext(), i));
+    }
+
+    @Override // android.widget.CompoundButton
+    public final void setButtonDrawable(Drawable drawable) {
+        super.setButtonDrawable(drawable);
+        AppCompatCompoundButtonHelper appCompatCompoundButtonHelper = this.mCompoundButtonHelper;
+        if (appCompatCompoundButtonHelper != null) {
+            appCompatCompoundButtonHelper.onSetButtonDrawable();
+        }
+    }
+}
